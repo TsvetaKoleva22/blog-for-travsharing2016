@@ -1,0 +1,54 @@
+.wrapper{
+    background: url("../images/holland.jpg") no-repeat center center fixed;
+    background-size: cover;
+}
+.new-post-block{
+    background-color: rgba(213, 189, 174, 0.83);
+    width: 70%;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 15px;
+}
+.new-post-title{
+    width: 350px;
+    font: 54px "Lucida Handwriting", cursive;
+    font-weight: 600;
+    margin: 0 auto 60px;
+    text-transform: uppercase;
+    text-align: center;
+    border-bottom: 9px double rgba(162, 10, 46, 0.4);
+}
+#editor-title{
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+    font: 24px "Lucida Calligraphy", cursive;
+    text-align: center;
+}
+#post-form{
+    background: rgba(242, 234, 205, 0.83);
+    border-radius: 20px;
+    margin: 5px;
+}
+.sinle-element-form{
+    display: inline-block;
+    width: 45%;
+    padding-top: 10px;
+}
+.content-field{
+    resize: none;
+    border: 3px solid rgba(152, 98, 88, 0.83);
+    outline: none;
+    width: 550px;
+    height: 300px;
+    border-radius: 15px;
+    text-align: left;
+    font: 12px "Lucida Calligraphy", cursive;
+    padding: 10px;
+}
+.content-field:focus{
+    font: 24px "Lucida Calligraphy", cursive;
+    font-weight: 100;
+    outline: none;
+    border: 3px dashed darkseagreen;
+}
