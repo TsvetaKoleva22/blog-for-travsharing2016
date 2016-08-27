@@ -5,6 +5,8 @@
     <title>Login</title>
     <link rel="stylesheet" type="text/css" href="styles-files/style.css">
     <link rel="stylesheet" type="text/css" href="styles-files/form-styles.css">
+    <script src="scripts/jquery-3.1.0.min.js"></script>
+    <script src="scripts/main.js"></script>
 </head>
 <body>
 <div class="wrapper">
@@ -15,13 +17,13 @@
         <hr>
         <nav>
             <ul>
-                <a href="index.html" class="single-menu-element-link">
+                <a href="index.html" id="index">
                     <li class="single-menu-element">Home</li>
                 </a>
-                <a href="login.html" class="single-menu-element-link">
+                <a href="login.html" id="login">
                     <li class="single-menu-element">Login</li>
                 </a>
-                <a href="register.html" class="single-menu-element-link">
+                <a href="register.html" id="register">
                     <li class="single-menu-element">Register</li>
                 </a>
             </ul>
@@ -53,13 +55,14 @@
             <h3>Login</h3>
         </header>
         <div class="user-login-block">
-            <form>
+            <form id="formLogin">
                 <h1 class="title-form">Username:</h1>
                 <input type="text" value="" placeholder="Enter Username" id="username">
                 <h1 class="title-form">Password:</h1>
                 <input type="password" value="" placeholder="Enter password" id="password">
                 <br>
-                <button id="login-request-button">Login</button>
+                <input type="submit" id="login-request-button" onclick="login()" value="Login">
+                <!--<button id="login-request-button" onclick="login()">Login</button>-->
             </form>
             <a class="form-link" href="register.html">Register here</a>
         </div>

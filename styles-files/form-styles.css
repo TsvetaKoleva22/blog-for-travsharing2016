@@ -39,7 +39,7 @@ input:focus{
     outline: none;
     border: 3px solid rgba(155, 197, 93, 0.83);
 }
-button{
+#login-request-button, #register-request-button{
     font: 16px "Lucida Calligraphy", cursive;
     color: white;
     background-color: darkolivegreen;
@@ -50,9 +50,23 @@ button{
     border-radius: 25px;
     width: 50%;
 }
-button:hover{
+#login-request-button:hover, #register-request-button:hover{
     background-color: purple;
 }
+/*button{*/
+    /*font: 16px "Lucida Calligraphy", cursive;*/
+    /*color: white;*/
+    /*background-color: darkolivegreen;*/
+    /*padding: 8px;*/
+    /*margin-top: 15px;*/
+    /*margin-bottom: 10px;*/
+    /*border: none;*/
+    /*border-radius: 25px;*/
+    /*width: 50%;*/
+/*}*/
+/*button:hover{*/
+    /*background-color: purple;*/
+/*}*/
 .form-link{
     text-decoration: none;
     color: darkolivegreen;

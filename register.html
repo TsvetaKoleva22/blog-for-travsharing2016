@@ -6,6 +6,8 @@
     <link rel="stylesheet" type="text/css" href="styles-files/style.css">
     <link rel="stylesheet" type="text/css" href="styles-files/form-styles.css">
     <link rel="stylesheet" type="text/css" href="styles-files/register-style.css">
+    <script src="scripts/jquery-3.1.0.min.js"></script>
+    <script src="scripts/main.js"></script>
 
 </head>
 <body>
@@ -55,18 +57,20 @@
             <h3>Register</h3>
         </header>
         <div class="user-login-block">
-            <form>
+            <form id="formRegister">
                 <h1 class="title-form">Username:</h1>
-                <input type="text" value="" placeholder="Enter Username" id="username">
+                <input type="text" value="" placeholder="Enter Username" id="usernameReg">
                 <h1 class="title-form">Full name:</h1>
                 <input type="text" value="" placeholder="Enter Full name" id="fullname">
                 <h1 class="title-form">Password:</h1>
-                <input type="password" value="" placeholder="Enter password" id="password">
+                <input type="password" value="" placeholder="Enter password" id="passwordReg">
                 <h1 class="title-form">Confirm password:</h1>
                 <input type="password" value="" placeholder="Confirm password"
                        id="confirm-password">
                 <br>
-                <button id="register-request-button">Register</button>
+                <input type="submit" id="register-request-button" onclick="register()"
+                       value="Register">
+                <!--<button id="register-request-button">Register</button>-->
             </form>
             <a class="form-link" href="login.html">Login here</a>
         </div>
