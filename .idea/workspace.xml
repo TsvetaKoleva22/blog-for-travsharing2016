@@ -25,8 +25,13 @@
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
 <<<<<<< HEAD
+<<<<<<< HEAD
             <state relative-caret-position="-7">
               <caret line="69" column="0" selection-start-line="69" selection-start-column="0" selection-end-line="69" selection-end-column="0" />
+=======
+            <state relative-caret-position="455">
+              <caret line="72" column="86" selection-start-line="72" selection-start-column="86" selection-end-line="72" selection-end-column="86" />
+>>>>>>> origin/master
 =======
             <state relative-caret-position="119">
               <caret line="7" column="55" selection-start-line="7" selection-start-column="55" selection-end-line="7" selection-end-column="55" />
@@ -37,11 +42,19 @@
         </entry>
       </file>
 <<<<<<< HEAD
+<<<<<<< HEAD
       <file leaf-file-name="list-all.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/list-all.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="340">
               <caret line="68" column="40" selection-start-line="68" selection-start-column="40" selection-end-line="68" selection-end-column="40" />
+=======
+      <file leaf-file-name="main-styles.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/styles-files/main-styles.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="4" column="14" selection-start-line="4" selection-start-column="14" selection-end-line="4" selection-end-column="14" />
+>>>>>>> origin/master
 =======
       <file leaf-file-name="list-all.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/list-all.html">
@@ -64,6 +77,10 @@
       <file leaf-file-name="main.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/scripts/main.js">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+            <state relative-caret-position="482">
+              <caret line="159" column="42" selection-start-line="159" selection-start-column="42" selection-end-line="159" selection-end-column="42" />
+=======
             <state relative-caret-position="2152">
               <caret line="187" column="0" selection-start-line="187" selection-start-column="0" selection-end-line="187" selection-end-column="0" />
 >>>>>>> origin/master
@@ -72,11 +89,16 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="new-post.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/new-post.html">
+      <file leaf-file-name="list-all.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/list-all.html">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+            <state relative-caret-position="856">
+              <caret line="55" column="10" selection-start-line="55" selection-start-column="10" selection-end-line="55" selection-end-column="10" />
+=======
             <state relative-caret-position="342">
               <caret line="91" column="19" selection-start-line="91" selection-start-column="19" selection-end-line="91" selection-end-column="19" />
+>>>>>>> origin/master
               <folding />
             </state>
           </provider>
@@ -107,6 +129,7 @@
         <option value="$PROJECT_DIR$/styles-files/new-post-style.css" />
 <<<<<<< HEAD
         <option value="$PROJECT_DIR$/styles-files/form-styles.css" />
+<<<<<<< HEAD
         <option value="$PROJECT_DIR$/new-post.html" />
         <option value="$PROJECT_DIR$/login.html" />
         <option value="$PROJECT_DIR$/register.html" />
@@ -115,13 +138,24 @@
         <option value="$PROJECT_DIR$/list-all.html" />
         <option value="$PROJECT_DIR$/scripts/main.js" />
 =======
+>>>>>>> origin/master
+=======
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/styles-files/form-styles.css" />
         <option value="$PROJECT_DIR$/scripts/main.js" />
+>>>>>>> origin/master
         <option value="$PROJECT_DIR$/new-post.html" />
         <option value="$PROJECT_DIR$/login.html" />
         <option value="$PROJECT_DIR$/register.html" />
         <option value="$PROJECT_DIR$/list-all.html" />
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+        <option value="$PROJECT_DIR$/scripts/main.js" />
+        <option value="$PROJECT_DIR$/styles-files/main-styles.css" />
+        <option value="$PROJECT_DIR$/index.html" />
+=======
+>>>>>>> origin/master
 >>>>>>> origin/master
       </list>
     </option>
@@ -249,7 +283,11 @@
       <workItem from="1472206536209" duration="8359000" />
       <workItem from="1472277733348" duration="8173000" />
 <<<<<<< HEAD
+<<<<<<< HEAD
       <workItem from="1472290981180" duration="3728000" />
+=======
+      <workItem from="1472290981180" duration="7793000" />
+>>>>>>> origin/master
 =======
 >>>>>>> origin/master
     </task>
@@ -257,7 +295,11 @@
   </component>
   <component name="TimeTrackingManager">
 <<<<<<< HEAD
+<<<<<<< HEAD
     <option name="totallyTimeSpent" value="38250000" />
+=======
+    <option name="totallyTimeSpent" value="42315000" />
+>>>>>>> origin/master
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1296" height="786" extended-state="7" />
@@ -723,11 +765,19 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/new-post.html">
       <provider selected="true" editor-type-id="text-editor">
 <<<<<<< HEAD
         <state relative-caret-position="342">
           <caret line="91" column="19" selection-start-line="91" selection-start-column="19" selection-end-line="91" selection-end-column="19" />
+=======
+    <entry file="file://$PROJECT_DIR$/../../webstormproj/Homework-jQuery-AJAX-Exercises/addDeleteItems.html">
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="187">
+          <caret line="11" column="6" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
+>>>>>>> origin/master
 =======
         <state relative-caret-position="407">
           <caret line="66" column="71" selection-start-line="66" selection-start-column="71" selection-end-line="66" selection-end-column="71" />
@@ -737,10 +787,17 @@
       </provider>
     </entry>
 <<<<<<< HEAD
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/styles-files/main-styles.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="405">
           <caret line="47" column="43" selection-start-line="47" selection-start-column="43" selection-end-line="47" selection-end-column="43" />
+=======
+    <entry file="file://$PROJECT_DIR$/new-post.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="91" column="19" selection-start-line="91" selection-start-column="19" selection-end-line="91" selection-end-column="19" />
+>>>>>>> origin/master
 =======
     <entry file="file://$PROJECT_DIR$/register.html">
       <provider selected="true" editor-type-id="text-editor">
@@ -752,10 +809,17 @@
       </provider>
     </entry>
 <<<<<<< HEAD
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/../../webstormproj/Homework-jQuery-AJAX-Exercises/addDeleteItems.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="11" column="6" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
+=======
+    <entry file="file://$PROJECT_DIR$/list-all.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="856">
+          <caret line="55" column="10" selection-start-line="55" selection-start-column="10" selection-end-line="55" selection-end-column="10" />
+>>>>>>> origin/master
 =======
     <entry file="file://$PROJECT_DIR$/scripts/main.js">
       <provider selected="true" editor-type-id="text-editor">
@@ -766,11 +830,19 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
 <<<<<<< HEAD
         <state relative-caret-position="-7">
           <caret line="69" column="0" selection-start-line="69" selection-start-column="0" selection-end-line="69" selection-end-column="0" />
+=======
+    <entry file="file://$PROJECT_DIR$/scripts/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="482">
+          <caret line="159" column="42" selection-start-line="159" selection-start-column="42" selection-end-line="159" selection-end-column="42" />
+>>>>>>> origin/master
 =======
         <state relative-caret-position="342">
           <caret line="91" column="19" selection-start-line="91" selection-start-column="19" selection-end-line="91" selection-end-column="19" />
@@ -780,10 +852,17 @@
       </provider>
     </entry>
 <<<<<<< HEAD
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/list-all.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
           <caret line="68" column="40" selection-start-line="68" selection-start-column="40" selection-end-line="68" selection-end-column="40" />
+=======
+    <entry file="file://$PROJECT_DIR$/styles-files/main-styles.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="14" selection-start-line="4" selection-start-column="14" selection-end-line="4" selection-end-column="14" />
+>>>>>>> origin/master
 =======
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
@@ -802,6 +881,10 @@
 =======
     <entry file="file://$PROJECT_DIR$/list-all.html">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="455">
+          <caret line="72" column="86" selection-start-line="72" selection-start-column="86" selection-end-line="72" selection-end-column="86" />
+=======
         <state relative-caret-position="103">
           <caret line="57" column="36" selection-start-line="57" selection-start-column="36" selection-end-line="57" selection-end-column="36" />
 >>>>>>> origin/master

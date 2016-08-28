@@ -41,6 +41,7 @@ function showHideMenuLinks() {
 // }
 $(function () {
     showHideMenuLinks();
+    listAdventures();
     // $('#index').show();
 
     // $('#index').click(showHomeView);
@@ -147,11 +148,29 @@ function listAdventures() {
     });
 
     function loadAdvSuccess(kinvey) {
+<<<<<<< HEAD
         for(let post of kinvey){
             let li = $('<li>').append($('<div class="dot">&nbsp;</div>'), $('<h3' +
             ' class="artTitle">').text(post.title), $("<p" + " class='artSubtitle'>").text("Posted by: " + post.author), $('<p class="artContent">').text(post.adventure));
             $('.articles').append(li);
         }
+=======
+        let i = 0;
+        for(let post of kinvey){
+            let li = $('<li>').append($('<div class="dot">&nbsp;</div>'), 
+                    $('<h3' + ' class="artTitle">').text(post.title),
+                    $('<p' +  ' class = "artDestination">').text(post.destination),
+                    $("<p" + " class='artSubtitle'>").text("Posted by: " + post.author + " on " + post.date),
+                    $('<p class="artContent">').text(post.adventure));
+            $('.articles').append(li);
+            if (i < 3) {
+                $('#welcome-text').hide();
+                $('.short-article').append(li);
+            }
+            i++;
+        }
+
+>>>>>>> origin/master
     // <div class="dot">&nbsp;</div>
     //     <h3 class="artTitle">Zaglavie</h3>
     //         <p class="artSubtitle"></p>
@@ -161,6 +180,10 @@ function listAdventures() {
     //    
     }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> origin/master
 }
 //    
 //     function loadBooksSuccess(data) {

@@ -1,12 +1,11 @@
 .wrapper{
     background: url("../images/paris.jpg") no-repeat center center fixed;
     background-size: cover;
-
 }
-/*a{*/
-    /*text-decoration: none;*/
-    /*color: darkolivegreen;*/
-/*}*/
+#welcome-text{
+    text-align: center;
+    font-size: 22px;
+}
 ul{
     text-decoration: none;
     list-style: none;
