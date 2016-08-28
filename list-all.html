@@ -5,8 +5,79 @@
     <title>List all adventures</title>
     <script src="scripts/jquery-3.1.0.min.js"></script>
     <script src="scripts/main.js"></script>
+    <link rel="stylesheet" type="text/css" href="styles-files/style.css">
+    <link rel="stylesheet" type="text/css" href="styles-files/main-styles.css">
 </head>
 <body>
+<div class="wrapper">
+    <aside class="sidebar">
+        <div class="logo">
+            <img src="images/logo.jpg" alt="logo">
+        </div>
+        <hr>
+        <nav>
+            <ul>
+                <a href="index.html" id="index">
+                    <li class="single-menu-element">Home</li>
+                </a>
+                <a href="new-post.html" id="newPost">
+                    <li class="single-menu-element">Add</li>
+                </a>
+                <a href="list-all.html" id="listAll">
+                    <li class="single-menu-element">List all</li>
+                </a>
+                <a href="index.html" id="logout" onclick="logout()">
+                    <li class="single-menu-element">Logout</li>
+                </a>
+            </ul>
+            <hr>
+            <h2 class="recent-posts-title">Recent Posts</h2>
+            <hr>
+            <ul>
+                <a href="#" class="single-menu-element-link">
+                    <li class="single-recent-post">Example 1</li>
+                </a>
+                <a href="#" class="single-menu-element-link">
+                    <li class="single-recent-post">Example 2</li>
+                </a>
+                <a href="#" class="single-menu-element-link">
+                    <li class="single-recent-post">Example 3</li>
+                </a>
+                <a href="#" class="single-menu-element-link">
+                    <li class="single-recent-post">Example 4</li>
+                </a>
+                <a href="#" class="single-menu-element-link">
+                    <li class="single-recent-post">Example 5</li>
+                </a>
+            </ul>
+        </nav>
+    </aside>
 
+    <main>
+        <header class="blog-title">
+            <h3>Adventures List</h3>
+            <button onclick="listAdventures()">Show</button>
+        </header>
+        <br>
+
+        <ul class="articles">
+            <li class="single-post">
+                <article>
+                    <div class="dot">&nbsp;</div>
+                    <h3 class="artTitle"></h3>
+                    <p class="artSubtitle"></p>
+                    <p class="artDestination"></p>
+                    <p class="artContent"></p>
+                </article>
+            </li>
+        </ul>
+
+        <footer>
+            <p class="footer-text">
+                &copy; Software University Foundations, No Rights Reserved
+            </p>
+        </footer>
+    </main>
+</div>
 </body>
 </html>

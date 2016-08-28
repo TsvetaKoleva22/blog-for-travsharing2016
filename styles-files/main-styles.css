@@ -26,22 +26,28 @@ ul{
     border-radius: 40px;
     background-color: olive;
 }
-.title{
+.artTitle{
     font: 32px "Lucida Handwriting", cursive;
     font-weight: 600;
 }
-.subtitle {
+.artSubtitle {
     font: 14px "Brush Script Std", cursive;
     font-weight: 100;
     margin-left: 3%;
 }
-.content{
+.artContent{
     padding-top: 2.5%;
     font: 16px "Lucida Calligraphy", cursive;
     font-weight: 500;
     width: 80%;
     margin-left: 3%;
     word-break: normal;
+}
+
+.artDestination {
+    font: 16px "Brush Script Std", cursive;
+    font-weight: 200;
+    margin-left: 3%;
 }
 footer{
     width: 100%;
