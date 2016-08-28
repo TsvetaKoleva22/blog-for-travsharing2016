@@ -52,7 +52,7 @@ $(function () {
 
     $('#formLogin').submit(function(e) { e.preventDefault(); login(); });
     $('#formRegister').submit(function(e) { e.preventDefault(); register(); });
-    // $('#formPost').submit(function(e) { e.preventDefault(); createBook(); });
+    $('#formPost').submit(function(e) { e.preventDefault(); addNewPost(); });
 
     // $(document).on({
     //     ajaxStart: function () {$('#loadingBox').show()},
@@ -173,30 +173,37 @@ function register() {
 // function showCreateBookView() {
 //     showView('viewCreateBook')
 // }
-// function createBook() {
-//     const kinveyBooksUrl = kinveyBaseUrl + 'appdata/' + kinveyAppKey + '/books';
-//     const kinveyAuthHeaders = {
-//         'Authorization' : 'Kinvey ' + sessionStorage.getItem('authToken')
-//     };
-//     let bookData = {
-//         title: $('#bookTitle').val(),
-//         author: $('#bookAuthor').val(),
-//         description: $('#bookDescription').val()
-//     };
-//
-//     $.ajax({
-//         method: 'POST',
-//         url: kinveyBooksUrl,
-//         headers: kinveyAuthHeaders,
-//         data: bookData,
-//         success: createBookSuccess,
-//         error: handleAjaxError
-//     })
-//     function createBookSuccess(response) {
-//         listBooks();
-//         showInfo('Book created.')
-//     }
-// }
+function addNewPost() {
+    const kinveyBooksUrl = kinveyBaseUrl + 'appdata/' + kinveyAppKey + '/travels';
+    const kinveyAuthHeaders = {
+        'Authorization' : 'Kinvey ' + sessionStorage.getItem('authToken')
+    };
+    let postData = {
+        title: $('#title').val(),
+        author: $('#author').val(),
+        date: $('#date').val(),
+        destination: $('#destination').val(),
+        adventure: $('#adventure').val()
+    };
+
+    $.ajax({
+        method: 'POST',
+        url: kinveyBooksUrl,
+        headers: kinveyAuthHeaders,
+        data: postData,
+        success: createBookSuccess,
+        error: handleAjaxError
+    });
+    function createBookSuccess(response) {
+        window.location.href = 'index.html';
+        // listBooks();
+        // showInfo('Post created.')
+    }
+    function dontWork(response) {
+        // alert('JSON.stringify(response)');
+        alert(JSON.stringify(response));
+    }
+}
 function logout() {
     sessionStorage.clear();
     showHideMenuLinks()

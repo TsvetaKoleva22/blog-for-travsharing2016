@@ -39,7 +39,7 @@ input:focus{
     outline: none;
     border: 3px solid rgba(155, 197, 93, 0.83);
 }
-#login-request-button, #register-request-button{
+#login-request-button, #register-request-button, #add-request-button{
     font: 16px "Lucida Calligraphy", cursive;
     color: white;
     background-color: darkolivegreen;
@@ -50,7 +50,7 @@ input:focus{
     border-radius: 25px;
     width: 50%;
 }
-#login-request-button:hover, #register-request-button:hover{
+#login-request-button:hover, #register-request-button:hover, #add-request-button:hover{
     background-color: purple;
 }
 /*button{*/
