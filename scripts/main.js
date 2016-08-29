@@ -24,6 +24,7 @@ function showHideMenuLinks() {
         $('#logout').show();
     }
 }
+<<<<<<< HEAD
 function showInfo(message) {
     $('#infoBox').text(message);
     $('#infoBox').show();
@@ -31,6 +32,24 @@ function showInfo(message) {
         $('#infoBox').fadeOut()
     }, 3000);
 }
+=======
+// function showInfo(m) {
+//     $('#infoBox').text(m);
+//     $('#infoBox').show();
+//     setTimeout(function () {
+//         $('#infoBox').fadeOut()
+//     }, 3000);
+// }
+//
+// function showError(errorMsg) {
+//     $('#errorBox').text("Error: " + errorMsg);
+//     $('#errorBox').show();
+// }
+$(function () {
+    showHideMenuLinks();
+    listAdventures();
+    // $('#index').show();
+>>>>>>> origin/master
 
 function showError(errorMsg) {
     $('#errorBox').text("Error: " + errorMsg);
@@ -160,7 +179,64 @@ function listAdventures() {
         }
     }
 }
+<<<<<<< HEAD
 
+=======
+function listAdventures() {
+    $('.articles').empty();
+    // showView('viewBooks');
+
+    const kinveyBooksUrl = kinveyBaseUrl + "appdata/" + kinveyAppKey + "/travels";
+    const kinveyAuthHeaders = {
+        'Authorization': 'Kinvey ' + sessionStorage.getItem('authToken')
+    };
+    $.ajax({
+        method: "GET",
+        url: kinveyBooksUrl,
+        headers: kinveyAuthHeaders,
+        success: loadAdvSuccess,
+        error: handleAjaxError
+    });
+
+    function loadAdvSuccess(kinvey) {
+<<<<<<< HEAD
+        for(let post of kinvey){
+            let li = $('<li>').append($('<div class="dot">&nbsp;</div>'), $('<h3' +
+            ' class="artTitle">').text(post.title), $("<p" + " class='artSubtitle'>").text("Posted by: " + post.author), $('<p class="artContent">').text(post.adventure));
+            $('.articles').append(li);
+        }
+=======
+        let i = 0;
+        for(let post of kinvey){
+            let li = $('<li>').append($('<div class="dot">&nbsp;</div>'), 
+                    $('<h3' + ' class="artTitle">').text(post.title),
+                    $('<p' +  ' class = "artDestination">').text(post.destination),
+                    $("<p" + " class='artSubtitle'>").text("Posted by: " + post.author + " on " + post.date),
+                    $('<p class="artContent">').text(post.adventure));
+            $('.articles').append(li);
+            if (i < 3) {
+                $('#welcome-text').hide();
+                $('.short-article').append(li);
+            }
+            i++;
+        }
+
+>>>>>>> origin/master
+    // <div class="dot">&nbsp;</div>
+    //     <h3 class="artTitle">Zaglavie</h3>
+    //         <p class="artSubtitle"></p>
+    //         <p class="artDestination"></p>
+    //         <p class="artContent"></p>
+    //    
+    //    
+    }
+
+<<<<<<< HEAD
+=======
+
+>>>>>>> origin/master
+}
+>>>>>>> origin/master
 //    
 //     function loadBooksSuccess(data) {
 //        
@@ -213,7 +289,16 @@ function addNewPost() {
     });
     function createBookSuccess(response) {
         window.location.href = 'index.html';
+<<<<<<< HEAD
         showInfo('Post created.')
+=======
+        // listBooks();
+        // showInfo('Post created.')
+    }
+    function dontWork(response) {
+        // alert('JSON.stringify(response)');
+        alert(JSON.stringify(response));
+>>>>>>> origin/master
     }
 }
 function logout() {
