@@ -47,5 +47,20 @@ ul{
     font: 16px "Brush Script Std", cursive;
     font-weight: 200;
     margin-left: 3%;
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+}
+footer{
+    width: 100%;
+    font-family: "Lucida Bright", serif;
+    font-size: 12px;
+    position: relative;
+    bottom: 0;
+    text-align: center;
+    clear: both;
+>>>>>>> origin/master
+>>>>>>> origin/master
 }
 
