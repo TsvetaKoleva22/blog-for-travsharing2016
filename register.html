@@ -53,28 +53,31 @@
     </aside>
 
     <main>
+        <section id="loadingBox">Loading...</section>
+        <section id="infoBox" onclick="$(this).fadeOut()">Info</section>
+        <section id="errorBox" onclick="$(this).fadeOut()">Error</section>
+
         <header class="register-title">
             <h3>Register</h3>
         </header>
         <div class="user-login-block">
             <form id="formRegister">
                 <h1 class="title-form">Username:</h1>
-                <input type="text" value="" placeholder="Enter Username" id="usernameReg">
+                <input type="text" value="" placeholder="Enter Username" id="usernameReg" required>
                 <h1 class="title-form">Full name:</h1>
-                <input type="text" value="" placeholder="Enter Full name" id="fullname">
+                <input type="text" value="" placeholder="Enter Full name" id="fullname" required>
                 <h1 class="title-form">Password:</h1>
-                <input type="password" value="" placeholder="Enter password" id="passwordReg">
+                <input type="password" value="" placeholder="Enter password" id="passwordReg"required>
                 <h1 class="title-form">Confirm password:</h1>
-                <input type="password" value="" placeholder="Confirm password"
-                       id="confirm-password">
+                <input type="password" value="" placeholder="Confirm password" id="confirm-password" required>
                 <br>
-                <input type="submit" id="register-request-button" onclick="register()"
+                <input type="submit" id="register-request-button"
                        value="Register">
-                <!--<button id="register-request-button">Register</button>-->
             </form>
             <a class="form-link" href="login.html">Login here</a>
         </div>
 
+        <br>
         <footer>
             <p class="footer-text">
                 &copy; Software University Foundations, No Rights Reserved

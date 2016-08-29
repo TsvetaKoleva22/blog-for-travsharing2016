@@ -1,17 +1,16 @@
 .wrapper{
     background: url("../images/paris.jpg") no-repeat center center fixed;
     background-size: cover;
-
 }
-/*a{*/
-    /*text-decoration: none;*/
-    /*color: darkolivegreen;*/
-/*}*/
+#welcome-text{
+    text-align: center;
+    font-size: 22px;
+}
 ul{
     text-decoration: none;
     list-style: none;
 }
-.articles{
+.articles, .short-article{
     list-style: none;
     margin-left: 5%;
 }
@@ -26,16 +25,16 @@ ul{
     border-radius: 40px;
     background-color: olive;
 }
-.title{
+.artTitle{
     font: 32px "Lucida Handwriting", cursive;
     font-weight: 600;
 }
-.subtitle {
+.artSubtitle {
     font: 14px "Brush Script Std", cursive;
     font-weight: 100;
     margin-left: 3%;
 }
-.content{
+.artContent{
     padding-top: 2.5%;
     font: 16px "Lucida Calligraphy", cursive;
     font-weight: 500;
@@ -43,12 +42,10 @@ ul{
     margin-left: 3%;
     word-break: normal;
 }
-footer{
-    width: 100%;
-    font-family: "Lucida Bright", serif;
-    font-size: 12px;
-    position: relative;
-    bottom: 0;
-    text-align: center;
-    clear: both;
+
+.artDestination {
+    font: 16px "Brush Script Std", cursive;
+    font-weight: 200;
+    margin-left: 3%;
 }
+

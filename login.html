@@ -51,6 +51,10 @@
     </aside>
 
     <main>
+        <section id="loadingBox">Loading...</section>
+        <section id="infoBox" onclick="$(this).fadeOut()">Info</section>
+        <section id="errorBox" onclick="$(this).fadeOut()">Error</section>
+
         <header class="blog-title">
             <h3>Login</h3>
         </header>
@@ -61,12 +65,13 @@
                 <h1 class="title-form">Password:</h1>
                 <input type="password" value="" placeholder="Enter password" id="password">
                 <br>
-                <input type="submit" id="login-request-button" onclick="login()" value="Login">
+                <input type="submit" id="login-request-button" value="Login">
                 <!--<button id="login-request-button" onclick="login()">Login</button>-->
             </form>
             <a class="form-link" href="register.html">Register here</a>
         </div>
 
+        <br>
         <footer>
             <p class="footer-text">
                 &copy; Software University Foundations, No Rights Reserved

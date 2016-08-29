@@ -151,6 +151,32 @@ a:hover{
     padding: 10px;
     font-size: 18px;
 }
+#loadingBox, #infoBox, #errorBox {
+    text-align: center;
+    background: lightskyblue;
+    border-radius: 8px;
+    color: white;
+    padding: 5px;
+    font-size: 22px;
+    width: 80%;
+    margin: 10px auto;
+}
+#infoBox{
+    background: limegreen;
+}
+#errorBox{
+    background: coral;
+}
+footer{
+    width: 100%;
+    font-family: "Lucida Bright", serif;
+    color: black;
+    font-size: 12px;
+    position: relative;
+    bottom: 0;
+    text-align: center;
+    clear: both;
+}
 
 
 
