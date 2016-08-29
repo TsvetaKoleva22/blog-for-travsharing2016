@@ -7,7 +7,10 @@
     <link rel="stylesheet" type="text/css" href="styles-files/form-styles.css">
     <link rel="stylesheet" type="text/css" href="styles-files/new-post-style.css">
     <script src="scripts/jquery-3.1.0.min.js"></script>
+    <script src="scripts/jquery.noty.minified.js"></script>
     <script src="scripts/main.js"></script>
+    <script src="scripts/moment.js"></script>
+
 </head>
 <body>
 <div class="wrapper">
@@ -21,8 +24,11 @@
                 <a href="index.html" class="single-menu-element-link">
                     <li class="single-menu-element">Home</li>
                 </a>
-                <a href="new-post.html" class="single-menu-element-link">
-                    <li class="single-menu-element">Create post</li>
+                <a href="new-post.html" id="newPost">
+                    <li class="single-menu-element">Add</li>
+                </a>
+                <a href="list-all.html" id="listAll">
+                    <li class="single-menu-element">List all</li>
                 </a>
                 <a href="index.html" class="single-menu-element-link">
                     <li class="single-menu-element">Logout</li>
@@ -53,31 +59,39 @@
     </aside>
 
     <main>
+
         <header class="new-post-title">
-        <h3>New Post</h3>
+        <h3>New Adventure</h3>
         </header>
         <div class="new-post-block">
-            <h2 id="editor-title">Create new post</h2>
+            <h2 id="editor-title">Add new adventure</h2>
             <form id="formPost">
                 <ul class="title-author">
                     <li class="sinle-element-form">
-                        <h1 class="title-form">Blog Post Title:</h1>
+                        <h1 class="title-form">Tilte:</h1>
                         <input type="text" value="" placeholder="Title" id="title">
+                    </li>
+                    <li class="sinle-element-form">
+                        <h1 class="title-form">Destination:</h1>
+                        <input type="text" value="" placeholder="Destination" id="destination">
                     </li>
                     <li class="sinle-element-form">
                         <h1 class="title-form">Author:</h1>
                         <input type="text" value="" placeholder="Author" id="author">
                     </li>
+
                 </ul>
 
-                <h1 class="title-form">Content:</h1>
+                <h1 class="title-form">Adventure:</h1>
                 <textarea class="content-field" type="text" value="" placeholder="Content"
-                      id="content"></textarea>
+                      id="adventure"></textarea>
                 <br>
-                <button id="create-request-new-post">Publish</button>
+                <input type="submit" id="add-request-button"
+                       value="Publish">
             </form>
         </div>
 
+        <br>
         <footer>
             <p class="footer-text">
                 &copy; Software University Foundations, No Rights Reserved

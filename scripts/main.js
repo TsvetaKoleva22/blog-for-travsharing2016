@@ -1,6 +1,3 @@
-/**
- * Created by kaka on 8/22/2016.
- */
 
 const kinveyBaseUrl = "https://baas.kinvey.com/";
 const kinveyAppKey = "kid_SkTj4va9";
@@ -10,6 +7,7 @@ const kinveyAppSecret = "aedfdbc6ec1b429986d37b0056533fa9";
 //     $('main > section').hide();
 //     $('#' + viewName).show()
 // }
+
 function showHideMenuLinks() {
     $('#index').show();
     if (sessionStorage.getItem('authToken') == null) {
@@ -27,45 +25,64 @@ function showHideMenuLinks() {
         $('#logout').show();
     }
 }
-// function showInfo(m) {
-//     $('#infoBox').text(m);
-//     $('#infoBox').show();
-//     setTimeout(function () {
-//         $('#infoBox').fadeOut()
-//     }, 3000);
-// }
-//
-// function showError(errorMsg) {
-//     $('#errorBox').text("Error: " + errorMsg);
-//     $('#errorBox').show();
-// }
+
+function showPopup(type, text, position) {
+
+    function showSuccessPopup(text, position) {
+        noty({
+            text: text,
+            timeout: 2000,
+            layout: 'top',
+            type: 'success'
+        });
+    }
+
+    function showInfoPopup(text, position) {
+        noty({
+            text: text,
+            timeout: 1000,
+            layout: 'top',
+            type: 'information'
+        });
+    }
+    
+    function showErrorPopup(text, position) {
+        noty({
+            text: text,
+            timeout: 2000,
+            layout: 'top',
+            type: 'error'
+        });
+    }
+
+    switch (type) {
+        case 'success':
+            showSuccessPopup(text, position);
+            break;
+        case 'info':
+            showInfoPopup(text, position);
+            break;
+        case 'error':
+            showErrorPopup(text, position);
+            break;
+    }
+}
 $(function () {
     showHideMenuLinks();
-    // $('#index').show();
-
-    // $('#index').click(showHomeView);
-    // $('#login').click(showLoginView);
-    // $('#register').click(showRegisterView);
-    // $('#listAll').click(listBooks);
-    // $('#newPost').click(showCreateBookView);
-    // $('#logout').click(logout);
-
+    
+    if (sessionStorage.getItem('authToken') != null) {
+        listAdventures();
+    }
+    
     $('#formLogin').submit(function(e) { e.preventDefault(); login(); });
     $('#formRegister').submit(function(e) { e.preventDefault(); register(); });
-    // $('#formPost').submit(function(e) { e.preventDefault(); createBook(); });
+    $('#formPost').submit(function(e) { e.preventDefault(); addNewPost(); });
 
-    // $(document).on({
-    //     ajaxStart: function () {$('#loadingBox').show()},
-    //     ajaxStop: function () {$('#loadingBox').hide()}
-    // });
+    $(document).on({
+        ajaxStart: showPopup('info', 'Loading...')
+    });
 });
 
-// function showHomeView() {
-//     showView('viewHome');
-// }
-// function showLoginView() {
-//     showView('viewLogin')
-// }
 function login() {
     const kinveyLoginUrl = kinveyBaseUrl + 'user/' + kinveyAppKey + '/login';
     const kinveyAuthHeaders = {
@@ -80,15 +97,17 @@ function login() {
         url: kinveyLoginUrl,
         headers: kinveyAuthHeaders,
         data: userData,
-        success: loginSuccess,
+        success: success,
         error: handleAjaxError
     });
-    function loginSuccess(response) {
+    function success(response) {
         let userAuth = response._kmd.authtoken;
         sessionStorage.setItem('authToken', userAuth);
-        window.location.href = 'index.html';
-        // showInfo('Login successful.');
-        // showHideMenuLinks();
+        
+        showPopup('success', 'Loading success');
+        setTimeout(function () {
+            window.location.href = 'index.html';
+        }, 2000);
     }
 }
 function handleAjaxError(response) {
@@ -99,11 +118,9 @@ function handleAjaxError(response) {
     if(response.responseJSON && response.responseJSON.description){
         errorMsg = response.responseJSON.description;
     }
-    // showError(errorMsg);
+   showPopup('error', errorMsg);
 }
-// function showRegisterView() {
-//     showView('viewRegister')
-// }
+
 function register() {
     const kinveyRegisterUrl = kinveyBaseUrl + 'user/' + kinveyAppKey + '/';
     const kinveyAuthHeaders = {
@@ -125,78 +142,84 @@ function register() {
     function registerSuccess(response) {
         let userAuth = response._kmd.authtoken;
         sessionStorage.setItem('authToken', userAuth);
-        window.location.href = 'index.html';
-        // showInfo('User registration successful.');
-        // showHideMenuLinks();
+        showPopup('success', 'User registration successful!');
+        setTimeout(function () {
+            window.location.href = 'index.html';
+        }, 2000);
     }
 }
-// function listBooks() {
-//     $('#books').empty();
-//     showView('viewBooks');
-//
-//     const kinveyBooksUrl = kinveyBaseUrl + "appdata/" + kinveyAppKey + "/books";
-//     const kinveyAuthHeaders = {
-//         'Authorization': 'Kinvey ' + sessionStorage.getItem('authToken')
-//     };
-//     $.ajax({
-//         method: "GET",
-//         url: kinveyBooksUrl,
-//         headers: kinveyAuthHeaders,
-//         success: loadBooksSuccess,
-//         error: handleAjaxError
-//     });
-//    
-//     function loadBooksSuccess(data) {
-//        
-//         let booksTable = $('<table>').append($('<tr>').append('<th>Title</th>', '<th>Author</th>', '<th>Description</th>'));
-//         for(let d of data){
-//             booksTable.append($('<tr>').append($('<td>').text(d.title),
-//                 $('<td>').text(d.author), $('<td>').text(d.description)))
-//             ;
-//         }
-//         $('#books').append(booksTable);
-//         // if(books.length == 0){
-//         //     $('#books').text('The book library is empty.');
-//         // }
-//         // else{
-//         //     let booksTable = $('<table>').append($('<tr>').append('<th>Title</th>', '<th>Author</th>', '<th>Description</th>'));
-//         //     for(let book of books){
-//         //         booksTable.append($('<tr>').append($('<td>').text(book.title),
-//         //         $('<td>').text(book.author), $('<td>').text(book.description)))
-//         //         ;
-//         //     }
-//         //     $('#books').append(booksTable);
-//         // }
-//         showInfo('Books loaded.');
-//     }
-// }
-// function showCreateBookView() {
-//     showView('viewCreateBook')
-// }
-// function createBook() {
-//     const kinveyBooksUrl = kinveyBaseUrl + 'appdata/' + kinveyAppKey + '/books';
-//     const kinveyAuthHeaders = {
-//         'Authorization' : 'Kinvey ' + sessionStorage.getItem('authToken')
-//     };
-//     let bookData = {
-//         title: $('#bookTitle').val(),
-//         author: $('#bookAuthor').val(),
-//         description: $('#bookDescription').val()
-//     };
-//
-//     $.ajax({
-//         method: 'POST',
-//         url: kinveyBooksUrl,
-//         headers: kinveyAuthHeaders,
-//         data: bookData,
-//         success: createBookSuccess,
-//         error: handleAjaxError
-//     })
-//     function createBookSuccess(response) {
-//         listBooks();
-//         showInfo('Book created.')
-//     }
-// }
+function listAdventures() {
+    $('.articles').empty();
+
+    const kinveyBooksUrl = kinveyBaseUrl + "appdata/" + kinveyAppKey + "/travels";
+    const kinveyAuthHeaders = {
+        'Authorization': 'Kinvey ' + sessionStorage.getItem('authToken')
+    };
+    $.ajax({
+        method: "GET",
+        url: kinveyBooksUrl,
+        headers: kinveyAuthHeaders,
+        success: loadAdvSuccess,
+        error: handleAjaxError
+    });
+    
+    function calcDate(kinvey) {
+        kinvey.sort(function (elem1, elem2) {
+            let date1 = new Date(elem1._kmd.ect);
+            let date2 = new Date(elem2._kmd.ect);
+            return date2 - date1;
+        })
+    };
+        
+    function loadAdvSuccess(kinvey) {
+        calcDate(kinvey);
+        let i = 0;
+        for (let post of kinvey) {
+            let date = moment().format('Do MMMM YYYY');
+            let li = $('<li>').append($('<div class="dot">&nbsp;</div>'),
+                $('<h3' + ' class="artTitle">').text(post.title),
+                $('<p' + ' class = "artDestination">').text(post.destination),
+                $("<p" + " class='artSubtitle'>").text("Posted by: " + post.author + " on " + date),
+                $('<p class="artContent">').text(post.adventure));
+            $('.articles').append(li);
+
+            if (i < 3) {
+                $('#welcome-text').hide();
+                $('.short-article').append(li);
+            }
+            i++;
+        }
+    }
+}
+
+function addNewPost() {
+    const kinveyBooksUrl = kinveyBaseUrl + 'appdata/' + kinveyAppKey + '/travels';
+    const kinveyAuthHeaders = {
+        'Authorization' : 'Kinvey ' + sessionStorage.getItem('authToken')
+    };
+    let postData = {
+        title: $('#title').val(),
+        author: $('#author').val(),
+        date: $('#date').val(),
+        destination: $('#destination').val(),
+        adventure: $('#adventure').val()
+    };
+
+    $.ajax({
+        method: 'POST',
+        url: kinveyBooksUrl,
+        headers: kinveyAuthHeaders,
+        data: postData,
+        success: addSuccess,
+        error: handleAjaxError
+    });
+    function addSuccess(response) {
+        showPopup('success', 'Adventure added successfully.');
+        setTimeout(function () {
+            window.location.href = 'index.html';
+        }, 2000);
+    }
+}
 function logout() {
     sessionStorage.clear();
     showHideMenuLinks()
