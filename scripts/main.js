@@ -18,6 +18,7 @@ function showHideMenuLinks() {
         $('#newPost').show();
         $('#listAll').show();
         $('#logout').show();
+        $('#logout').show();
     }
 }
 function showPopup(type, text, position) {
