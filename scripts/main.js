@@ -1,4 +1,3 @@
-
 const kinveyBaseUrl = "https://baas.kinvey.com/";
 const kinveyAppKey = "kid_SkTj4va9";
 const kinveyAppSecret = "aedfdbc6ec1b429986d37b0056533fa9";
@@ -17,7 +16,6 @@ function showHideMenuLinks() {
         $('#register').hide();
         $('#newPost').show();
         $('#listAll').show();
-        $('#logout').show();
         $('#logout').show();
     }
 }
@@ -131,6 +129,18 @@ function register() {
         username: $('#usernameReg').val(),
         password: $('#passwordReg').val()
     };
+    if ($('#passwordReg').val() != $('#confirm-password').val()) {
+        showPopup('error',"Passwords don't match");
+        return;
+    }
+    if (($('#usernameReg').val().length < 3)){
+        showPopup('error',"Username must be at least 3 symbols");
+        return;
+    }
+    if (($('#passwordReg').val().length < 3)){
+        showPopup('error',"Password must be at least 3 symbols");
+        return;
+    }
     $.ajax({
         method: 'POST',
         url: kinveyRegisterUrl,
@@ -181,22 +191,34 @@ function listAdventures() {
                 $('<p class="artContent">').text(post.adventure));
             $('.articles').append(li);
 
+            //showing the 3 most Recent posts:
+            let shortLi = $('<li class="single-recent-post">').text(post.title);
             if (i < 3) {
                 $('#welcome-text').hide();
                 $('.short-article').append(li);
+                $('.recent-post-list').append($('<a href="list-all.html">').append(shortLi));
             }
             i++;
         }
+        // showRecentPost(kinvey,2);
     }
 }
-
+// function showRecentPost(kinvey,n){
+//     let i=0;
+//     for  (let post of kinvey) {
+//         let shortLi = $('<li class="single-recent-post">').text(post.title);
+//         $('.recent-post-list').append(shortLi);
+//         if(i == n){
+//             break;
+//         }
+//     }
+// }
 function addNewPost(data) {
     const kinveyBooksUrl = kinveyBaseUrl + 'appdata/' + kinveyAppKey + '/travels';
     const kinveyAuthHeaders = {
         'Authorization': 'Kinvey ' + sessionStorage.getItem('authToken')
     };
     let advDate = moment().format('Do MMMM YYYY');
-    //$('#author').val(data.username);
 
     let postData = {
         title: $('#title').val(),
