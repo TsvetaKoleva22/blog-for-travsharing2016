@@ -18,6 +18,7 @@ function showHideMenuLinks() {
         $('#newPost').show();
         $('#listAll').show();
         $('#logout').show();
+        $('#logout').show();
     }
 }
 function showPopup(type, text, position) {
@@ -84,7 +85,11 @@ $(function () {
     $(document).on({
         ajaxStart: showPopup('info', 'Loading...')
     });
+<<<<<<< HEAD
 })
+=======
+});
+>>>>>>> origin/master
 function login() {
     const kinveyLoginUrl = kinveyBaseUrl + 'user/' + kinveyAppKey + '/login';
     const kinveyAuthHeaders = {
@@ -105,7 +110,11 @@ function login() {
     function success(response) {
         let userAuth = response._kmd.authtoken;
         sessionStorage.setItem('authToken', userAuth);
+<<<<<<< HEAD
         showPopup('success', 'Loading success');
+=======
+        showPopup('success', 'Login successful.');
+>>>>>>> origin/master
         setTimeout(function () {
             window.location.href = 'index.html';
         }, 2000);
@@ -155,7 +164,11 @@ function register() {
     function registerSuccess(response) {
         let userAuth = response._kmd.authtoken;
         sessionStorage.setItem('authToken', userAuth);
+<<<<<<< HEAD
         showPopup('success', 'User registration successful!');
+=======
+        showPopup('success', 'User registration successful.');
+>>>>>>> origin/master
         setTimeout(function () {
             window.location.href = 'index.html';
         }, 2000);
@@ -184,7 +197,11 @@ function listAdventures() {
             let date2 = new Date(elem2._kmd.ect);
             return date2 - date1;
         });
+<<<<<<< HEAD
 
+=======
+        
+>>>>>>> origin/master
         let i = 0;
         for (let post of kinvey) {
             let li = $('<li>').append($('<div class="dot">&nbsp;</div>'),
@@ -218,12 +235,16 @@ function showRecentPost(kinvey,n){
 //         <li class="single-menu-element">List all</li>
 //     </a>
 
-function addNewPost() {
+function addNewPost(data) {
     const kinveyBooksUrl = kinveyBaseUrl + 'appdata/' + kinveyAppKey + '/travels';
     const kinveyAuthHeaders = {
         'Authorization': 'Kinvey ' + sessionStorage.getItem('authToken')
     };
     let advDate = moment().format('Do MMMM YYYY');
+<<<<<<< HEAD
+=======
+    //$('#author').val(data.username);
+>>>>>>> origin/master
 
     let postData = {
         title: $('#title').val(),
