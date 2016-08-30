@@ -84,6 +84,7 @@ $(function () {
         ajaxStart: showPopup('info', 'Loading...')
     });
 });
+
 function login() {
     const kinveyLoginUrl = kinveyBaseUrl + 'user/' + kinveyAppKey + '/login';
     const kinveyAuthHeaders = {
@@ -167,6 +168,7 @@ function listAdventures() {
     const kinveyAuthHeaders = {
         'Authorization': 'Kinvey ' + sessionStorage.getItem('authToken')
     };
+
     $.ajax({
         method: "GET",
         url: kinveyBooksUrl,
@@ -181,7 +183,6 @@ function listAdventures() {
             let date2 = new Date(elem2._kmd.ect);
             return date2 - date1;
         });
-        
         let i = 0;
         for (let post of kinvey) {
             let li = $('<li>').append($('<div class="dot">&nbsp;</div>'),
@@ -199,10 +200,9 @@ function listAdventures() {
                 $('.recent-post-list').append($('<a href="list-all.html">').append(shortLi));
             }
             i++;
+            // showRecentPost(kinvey,2);
         }
-        // showRecentPost(kinvey,2);
     }
-}
 // function showRecentPost(kinvey,n){
 //     let i=0;
 //     for  (let post of kinvey) {
@@ -212,13 +212,14 @@ function listAdventures() {
 //             break;
 //         }
 //     }
-// }
+}
 function addNewPost(data) {
     const kinveyBooksUrl = kinveyBaseUrl + 'appdata/' + kinveyAppKey + '/travels';
     const kinveyAuthHeaders = {
         'Authorization': 'Kinvey ' + sessionStorage.getItem('authToken')
     };
     let advDate = moment().format('Do MMMM YYYY');
+
 
     let postData = {
         title: $('#title').val(),
