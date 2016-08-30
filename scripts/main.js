@@ -83,7 +83,11 @@ $(function () {
     $(document).on({
         ajaxStart: showPopup('info', 'Loading...')
     });
+<<<<<<< HEAD
+})
+=======
 });
+>>>>>>> origin/master
 function login() {
     const kinveyLoginUrl = kinveyBaseUrl + 'user/' + kinveyAppKey + '/login';
     const kinveyAuthHeaders = {
@@ -104,7 +108,11 @@ function login() {
     function success(response) {
         let userAuth = response._kmd.authtoken;
         sessionStorage.setItem('authToken', userAuth);
+<<<<<<< HEAD
+        showPopup('success', 'Loading success');
+=======
         showPopup('success', 'Login successful.');
+>>>>>>> origin/master
         setTimeout(function () {
             window.location.href = 'index.html';
         }, 2000);
@@ -127,10 +135,16 @@ function register() {
     };
     let userData = {
         username: $('#usernameReg').val(),
-        password: $('#passwordReg').val()
+        password: $('#passwordReg').val(),
     };
+<<<<<<< HEAD
     if ($('#passwordReg').val() != $('#confirm-password').val()) {
         showPopup('error',"Passwords don't match");
+=======
+
+    if ($('#passwordReg').val() != $('#confirm-password').val()) {
+        showPopup('error',"Password don't match");
+>>>>>>> origin/master
         return;
     }
     if (($('#usernameReg').val().length < 3)){
@@ -153,7 +167,11 @@ function register() {
     function registerSuccess(response) {
         let userAuth = response._kmd.authtoken;
         sessionStorage.setItem('authToken', userAuth);
+<<<<<<< HEAD
+        showPopup('success', 'User registration successful!');
+=======
         showPopup('success', 'User registration successful.');
+>>>>>>> origin/master
         setTimeout(function () {
             window.location.href = 'index.html';
         }, 2000);
@@ -167,6 +185,7 @@ function listAdventures() {
     const kinveyAuthHeaders = {
         'Authorization': 'Kinvey ' + sessionStorage.getItem('authToken')
     };
+
     $.ajax({
         method: "GET",
         url: kinveyBooksUrl,
@@ -181,7 +200,11 @@ function listAdventures() {
             let date2 = new Date(elem2._kmd.ect);
             return date2 - date1;
         });
+<<<<<<< HEAD
+
+=======
         
+>>>>>>> origin/master
         let i = 0;
         for (let post of kinvey) {
             let li = $('<li>').append($('<div class="dot">&nbsp;</div>'),
@@ -200,6 +223,7 @@ function listAdventures() {
             }
             i++;
         }
+<<<<<<< HEAD
         // showRecentPost(kinvey,2);
     }
 }
@@ -213,12 +237,39 @@ function listAdventures() {
 //         }
 //     }
 // }
+=======
+        showRecentPost(kinvey,2);
+    }
+}
+function showRecentPost(kinvey,n){
+    let i=0;
+    for  (let post of kinvey) {
+
+        let shortLi = $('<li class="single-recent-post">').text(post.title);
+        $('.recent-post-list').append(shortLi);
+        if( i == n){
+            break;
+        }
+    }
+}
+// <a href="list-all.html" id="listAll">
+//         <li class="single-menu-element">List all</li>
+//     </a>
+
+>>>>>>> origin/master
 function addNewPost(data) {
     const kinveyBooksUrl = kinveyBaseUrl + 'appdata/' + kinveyAppKey + '/travels';
     const kinveyAuthHeaders = {
         'Authorization': 'Kinvey ' + sessionStorage.getItem('authToken')
     };
     let advDate = moment().format('Do MMMM YYYY');
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+    //$('#author').val(data.username);
+>>>>>>> origin/master
+>>>>>>> origin/master
 
     let postData = {
         title: $('#title').val(),
