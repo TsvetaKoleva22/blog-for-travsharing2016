@@ -12,6 +12,7 @@
     <script src="scripts/main.js"></script>
 
 </head>
+
 <body>
 <div class="wrapper">
     <aside class="sidebar">
@@ -21,16 +22,16 @@
         <hr>
         <nav>
             <ul>
-                <a href="index.html" class="single-menu-element-link">
+                <a href="index.html" id="index">
                     <li class="single-menu-element">Home</li>
                 </a>
-                <a href="new-post.html" id="newPost">
+                <a href="new-post.html" id="new-post">
                     <li class="single-menu-element">Add</li>
                 </a>
-                <a href="list-all.html" id="listAll">
+                <a href="list-all.html" id="list-all">
                     <li class="single-menu-element">List all</li>
                 </a>
-                <a href="index.html" class="single-menu-element-link">
+                <a href="index.html" id="logout" onclick="logout()">
                     <li class="single-menu-element">Logout</li>
                 </a>
 
@@ -51,18 +52,17 @@
             <h2 id="editor-title">Add new adventure</h2>
             <form id="formPost">
                 <ul class="title-author">
-                    <li class="sinle-element-form">
+                    <li class="single-element-form">
                         <h1 class="title-form">Tilte:</h1>
                         <input type="text" value="" placeholder="Title" id="title" required>
                     </li>
-                    <li class="sinle-element-form">
+                    <li class="single-element-form">
                         <h1 class="title-form">Destination:</h1>
                         <input type="text" value="" placeholder="Destination" id="destination" required>
-                    <li class="sinle-element-form">
+                    <li class="single-element-form">
                         <h1 class="title-form">Author:</h1>
                         <input type="text" value="" placeholder="Author" id="author" required>
                     </li>
-
                 </ul>
 
                 <h1 class="title-form">Adventure:</h1>

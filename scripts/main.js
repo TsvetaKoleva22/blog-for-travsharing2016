@@ -7,18 +7,19 @@ function showHideMenuLinks() {
     if (sessionStorage.getItem('authToken') == null) {
         $('#login').show();
         $('#register').show();
-        $('#newPost').hide();
-        $('#listAll').hide();
+        $('#new-post').hide();
+        $('#list-all').hide();
         $('#logout').hide();
     }
     else {
         $('#login').hide();
         $('#register').hide();
-        $('#newPost').show();
-        $('#listAll').show();
+        $('#new-post').show();
+        $('#list-all').show();
         $('#logout').show();
     }
 }
+
 function showPopup(type, text, position) {
 
     function showSuccessPopup(text, position) {
@@ -29,7 +30,6 @@ function showPopup(type, text, position) {
             type: 'success'
         });
     }
-
     function showInfoPopup(text, position) {
         noty({
             text: text,
@@ -38,7 +38,6 @@ function showPopup(type, text, position) {
             type: 'information'
         });
     }
-    
     function showErrorPopup(text, position) {
         noty({
             text: text,
@@ -60,6 +59,7 @@ function showPopup(type, text, position) {
             break;
     }
 }
+
 $(function () {
     showHideMenuLinks();
 
@@ -111,6 +111,7 @@ function login() {
         }, 2000);
     }
 }
+
 function handleAjaxError(response) {
     let errorMsg = JSON.stringify(response);
     if (response.readyState === 0) {
@@ -121,15 +122,18 @@ function handleAjaxError(response) {
     }
     showPopup('error', errorMsg);
 }
+
 function register() {
     const kinveyRegisterUrl = kinveyBaseUrl + 'user/' + kinveyAppKey + '/';
     const kinveyAuthHeaders = {
         'Authorization': 'Basic ' + btoa(kinveyAppKey + ':' + kinveyAppSecret)
     };
+
     let userData = {
         username: $('#usernameReg').val(),
         password: $('#passwordReg').val()
     };
+    
     if ($('#passwordReg').val() != $('#confirm-password').val()) {
         showPopup('error',"Passwords don't match");
         return;
@@ -142,6 +146,7 @@ function register() {
         showPopup('error',"Password must be at least 3 symbols");
         return;
     }
+
     $.ajax({
         method: 'POST',
         url: kinveyRegisterUrl,
@@ -178,11 +183,13 @@ function listAdventures() {
     });
     
     function loadAdvSuccess(kinvey) {
+        
         kinvey.sort(function (elem1, elem2) {
             let date1 = new Date(elem1._kmd.ect);
             let date2 = new Date(elem2._kmd.ect);
             return date2 - date1;
         });
+        
         let i = 0;
         for (let post of kinvey) {
             let li = $('<li>').append($('<div class="dot">&nbsp;</div>'),
@@ -200,27 +207,19 @@ function listAdventures() {
                 $('.recent-post-list').append($('<a href="list-all.html">').append(shortLi));
             }
             i++;
-            // showRecentPost(kinvey,2);
         }
     }
-// function showRecentPost(kinvey,n){
-//     let i=0;
-//     for  (let post of kinvey) {
-//         let shortLi = $('<li class="single-recent-post">').text(post.title);
-//         $('.recent-post-list').append(shortLi);
-//         if(i == n){
-//             break;
-//         }
-//     }
+
 }
+
 function addNewPost(data) {
     const kinveyBooksUrl = kinveyBaseUrl + 'appdata/' + kinveyAppKey + '/travels';
     const kinveyAuthHeaders = {
         'Authorization': 'Kinvey ' + sessionStorage.getItem('authToken')
     };
+    
     let advDate = moment().format('Do MMMM YYYY');
-
-
+    
     let postData = {
         title: $('#title').val(),
         author: $('#author').val(),
@@ -237,6 +236,7 @@ function addNewPost(data) {
         success: addSuccess,
         error: handleAjaxError
     });
+    
     function addSuccess(response) {
         showPopup('success', 'Adventure added successfully.');
         setTimeout(function () {
@@ -244,6 +244,7 @@ function addNewPost(data) {
         }, 2000);
     }
 }
+
 function logout() {
     sessionStorage.clear();
     showHideMenuLinks()

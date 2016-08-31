@@ -53,20 +53,6 @@ input:focus{
 #login-request-button:hover, #register-request-button:hover, #add-request-button:hover{
     background-color: purple;
 }
-/*button{*/
-    /*font: 16px "Lucida Calligraphy", cursive;*/
-    /*color: white;*/
-    /*background-color: darkolivegreen;*/
-    /*padding: 8px;*/
-    /*margin-top: 15px;*/
-    /*margin-bottom: 10px;*/
-    /*border: none;*/
-    /*border-radius: 25px;*/
-    /*width: 50%;*/
-/*}*/
-/*button:hover{*/
-    /*background-color: purple;*/
-/*}*/
 .form-link{
     text-decoration: none;
     color: darkolivegreen;
@@ -74,13 +60,6 @@ input:focus{
     font-weight: 900;
     padding: 10px;
     margin-top: 40px;
-}
-footer{
-    width: 100%;
-    position: absolute;
-    bottom: 0;
-    text-align: center;
-    clear: both;
 }
 .register-title {
     width: 300px;
